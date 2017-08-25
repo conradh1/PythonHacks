@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 #Python Given a string mutable the string
-#See: https://www.hackerrank.com/challenges/python-mutations/problem
+#See: https://www.hackerrank.com/challenges/string-validators/problem
 import sys
 import string
 
