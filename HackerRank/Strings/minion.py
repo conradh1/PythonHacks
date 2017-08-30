@@ -7,18 +7,16 @@ import string
 
 
 def minion_game(word):
-    vowels  = 'aeiouy';
+    vowels  = 'aeiou';
     v = 0;  # variables for score
     c = 0;
     
-    
     for i in range(len(word)):             
-        if ( word[i] in vowels ):
+        if ( word[i].lower() in vowels ):
             v += (len(s)-i)
         else:
             c += (len(s)-i)
-            
-        
+                    
     if v > c:
         print "Kevin", v
     elif v < c:
