@@ -2,6 +2,8 @@
 
 import sys
 
+# See: https://www.hackerrank.com/challenges/birthday-cake-candles/problem
+
 def birthdayCakeCandles(n, ar):
 	cmax = sys.maxint * -1
 	total = 0;
