@@ -2,23 +2,20 @@
 
 import sys
 
+
 def miniMaxSum(arr):
     # Complete this function
-	miniMin = sys.maxint
-	miniMax = sys.maxint * -1
-	miniSum = 0;
-	minSum = 0;
-	maxSum = 0;
-	for i in range(len(arr)):
-		n = arr[i]
-		miniSum += n
-		
-		if ( n < miniMin ): miniMin = n
-		if ( n > miniMax ): miniMax = n
-    
-	minSum = miniSum - miniMax
-	maxSum = miniSum - miniMin
-	print str(minSum)+' '+str(maxSum)
+	low = sys.maxint
+	high = -1
+	total = 0;
+
+	for i in range(0,len(arr)):
+		total += arr[i];
+		if (arr[i] > high):
+			high = arr[i]
+		if (arr[i] < low):
+			low = arr[i]
+	print str(total-high)+' '+str(total-low)
 
 if __name__ == "__main__":
 	arr = map(int, raw_input().strip().split(' '))
