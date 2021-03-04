@@ -1,5 +1,6 @@
 #!/usr/bin/python
-#This python program sees many attempts to win the lottery/
+# This python program sees how many attempts
+# are needed to win the lottery.
 
 #get string to encrypt from standard input
 
