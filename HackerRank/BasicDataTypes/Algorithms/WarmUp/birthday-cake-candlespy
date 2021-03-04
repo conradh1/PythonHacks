@@ -1,0 +1,40 @@
+#!/bin/python
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'birthdayCakeCandles' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts INTEGER_ARRAY candles as parameter.
+#
+
+def birthdayCakeCandles(candles):
+    candle_totals = dict()
+    top_count = -1
+
+    for i in range(0, len(candles)):
+        if candles[i] in candle_totals:
+            candle_totals[candles[i]] += 1
+        else:
+            candle_totals[candles[i]] = 1
+        if (candle_totals[candles[i]] > top_count):
+            top_count = candle_totals[candles[i]]
+    return (top_count)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    candles_count = int(raw_input().strip())
+
+    candles = map(int, raw_input().rstrip().split())
+
+    result = birthdayCakeCandles(candles)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
