@@ -5,26 +5,17 @@ import os
 import random
 import re
 import sys
+from collections import Counter
 
 # Complete the checkMagazine function below.
 def checkMagazine(magazine, note):
     allLetters = True;
 
-    note.sort()
-    magazine.sort()
-    m = dict()
-    n = dict()
-    for word in magazine:
-        m.setdefault(word, 1)
-        m[word] += 1
+    m = Counter(magazine)
+    n = Counter(note)
 
-    for word in note:
-        n.setdefault(word, 1)
-        n[word] += 1
-        if ( word not in m.keys() ):
-            allLetters = False
-            break
-        elif (n[word] > m[word]):
+    for word in n:
+        if n[word] > m[word]:
             allLetters = False
             break
 
@@ -32,8 +23,12 @@ def checkMagazine(magazine, note):
         print('Yes')
     else:
         print('No')
-
 if __name__ == '__main__':
+    mn = raw_input().split()
+
+    m = int(mn[0])
+
+    n = int(mn[1])
 
     magazine = raw_input().rstrip().split()
 
