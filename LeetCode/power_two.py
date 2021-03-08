@@ -1,5 +1,5 @@
 #!/bin/python
-
+#See: https://leetcode.com/problems/power-of-two/
 import math
 import os
 import random
