@@ -11,22 +11,18 @@ from collections import Counter
 def powerTwo(num):
     isThree = False
 
-    if num < 0 or num == 2: return False
-    count = 0
-    three = 3
+    if (num == 1):
+        return True
+    if (num < 3):
+        return False
 
-    if (num == pow(3, count) ):
-        isThree = True
-    else:
-        count += 1
+    t = num
 
-    while (three <= num):
-        three = pow(3,count)
-        if (three  == num):
-            isThree = True
-            break
-        else:
-            count += 1
+    while (t % 3 == 0):
+        if (t == 3):
+            return True
+        t = t/3
+
 
     return isThree
 if __name__ == '__main__':
