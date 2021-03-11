@@ -70,6 +70,8 @@ def capitals():
     print Capitals.items()
     print Capitals.keys()
     Capitals.pop('USA')
+    if ( 'Washington' not in Capitals.item()):
+        print "Where's DC go?"
 
 
 def march2D():
