@@ -11,20 +11,13 @@ def runnerup(arr):
         return arr[len(arr)-2]
 
 # runnerup without sort
-def runnerup2(arr):
-    if (len(arr) == 2):
-        if (arr[0] < arr[1]):
-            return arr[0]
-        else:
-            return arr[1]
-    else:
-        mx = arr[0]
-        my = arr[0]        
-        for i in range(0, len(arr)):
-            if ( arr[i] > mx):
-                mx= arr[i]
-            if (arr[i] > my and arr[i] < mx):
-                my = arr[i]
+def runnerup2(arr):    
+    mx = arr[1]
+    my = arr[0]        
+    for i in range(0, len(arr)):
+        if ( arr[i] > mx):
+            my = mx
+            mx= arr[i]
                         
     return my
 
