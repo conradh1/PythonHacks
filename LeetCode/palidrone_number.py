@@ -1,5 +1,5 @@
 #!/bin/python
-#https://www.hackerrank.com/challenges/minimum-swaps-2/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=arrays
+#https://leetcode.com/problems/palindrome-number
 
 import math
 import os
@@ -22,4 +22,4 @@ def palidrone_number(n):
 if __name__ == '__main__':
     n = int(raw_input())
     s = str(palidrone_number(n));
-    print(s.lower())    
+    print(s.lower)    
