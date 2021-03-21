@@ -27,7 +27,7 @@ def add_digits(num):
 if __name__ == '__main__':
     #fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    n = str(raw_input())
+    n = str(raw_input().rstrip())
 
     res = add_digits(n)
     print (str(res))
