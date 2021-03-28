@@ -5,42 +5,43 @@
 import sys
 import string
 
-grades = []
+grades = {}
 
-for _ in range(int(raw_input())):
-	name = raw_input()
-	score = float(raw_input())
-	grades.append([name,score])
+# print all second lowerest scores.
+def secondLow():
+	names = []	
+	
+	x = 0.0
+	y = 0.0
+	first = True
 
-low1 = 101.0
-low2 = 101.0
-low1Name = ''
-low2Name = ''
-secondLow = []
-secondLow.append([low2Name, low2])
+	for name, score in grades.items():
+		if ( first ):
+			x = score
+			y = score
+			first = False
+		if (score < x):
+			y = x
+			x = score					
+			# if (len(names) > 0):				
+			# 	if (grades[names[0]] > score ):
+			# 		names = []
+			#names.append(name)
 
-for i in range(0,len(grades)):
-	#print grades[i][0]+" "+str(grades[i][1])
-	name = grades[i][0]
-	score = grades[i][1]
+	#return names
+	return y
 
-	if ( score < low1 ):
-		low2 = low1
-		low2Name = low1Name
-		low1 = score
-		low1Name = name
-	elif ( score <= low2 and score > low1 ):
-		low2 = score
-		low2Name = name
+if __name__ == '__main__':
+	n = int(raw_input())
 
-	if ( secondLow[0][1] > low2 ):
-			secondLow = []
-			secondLow.append([low2Name, low2])
-	elif ( secondLow[0][1] == low2 and secondLow[0][0] != low2Name ):
-			secondLow.append([low2Name, low2])
+	for _ in range(0,n):
+		name = raw_input()
+		score = float(raw_input())
+		grades[name]= score
+	
+	names = secondLow()
+	print(""+str(names))
+	# for name in names:
+	#  	print name
 
-# for
 
-for i in range(0, len(secondLow)):
-	#print "Second lowest: "+secondLow[i][0]+": "+str(secondLow[i][1])
-	print secondLow[i][0]
