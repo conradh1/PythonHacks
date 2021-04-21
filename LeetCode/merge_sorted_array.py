@@ -16,23 +16,21 @@ def merge(nums1, m, nums2, n):
     :type n: int length of nums2
     :rtype: None Do not return anything, modify nums1 in-place instead.
     """
-    i,j=0,0
+    i,j=0,0    
 
-    while i<m and j<n:
-        if nums1[i]>nums2[j]:
-            # march down the array
-            for x in range(m+1,i,-1):
-                nums1[x] = nums1[x-1]
-            #nums1[(i+1):(m+1)] = nums1[i:(m)]
-            nums1[i]=nums2[j]
-            j+=1; m+=1
-        else:
-            i+=1
+    while (i < m and j < n):
+        if (nums1[i] > nums2[j]):
+            for x in range(m,i,-1):
+                nums1[x] = nums1[x-1]            
+            nums1[i] = nums2[j]
+            m += 1            
+            j += 1
+        i += 1
 
-    # anything in nums2 greater than nums1
-    while j<n:
-        nums1[i]=nums2[j]
-        j+=1; i+=1            
+    while (j < n):
+        nums1[m] = nums2[j]
+        j +=1
+        m += 1
 
     print(nums1)
 
