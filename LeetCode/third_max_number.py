@@ -13,39 +13,37 @@ def thirdMax(nums):
     :type nums: List[int]
     :rtype: int
     """
+    if (len(nums) <= 2):
+        return (max(nums))
     
-    if (len(nums) == 1):
-        return nums[0]
-    elif(len(nums) == 2):
-        if (nums[0] > nums[1]):
-            return nums[0]
-        else:
-            return nums[1]    
-    else:
-        top = nums[0]
-        middle = nums[1]
-        bottom = nums[2]
-        
-        for i in range(0,len(nums)):
-            x = nums[i]
-            if ( x > top):
-                if (top > middle):
-                    bottom = middle
-                    middle = top
-                elif (top < middle and top > bottom):
-                    bottom = top
-                elif ( top < bottom):
-                    bottom = top
-                top = x
-            elif (x < top and x > middle):
-                if ( middle > bottom):
-                    bottom = middle                
-                middle = x
-            elif (x < top and x < middle and x > bottom):
-                bottom = x                
-                
-        return bottom
+    top = -sys.maxsize-1
+    middle = -sys.maxsize-1
+    bottom = -sys.maxsize-1
+    bottomFound = False
 
+    for x in nums:
+        #case top
+        if (x > top):            
+            if ( top > middle):
+                middle = top
+            top = x     
+        elif (x < top and x > middle):            
+            middle = x
+            
+    for y in nums:
+        if (y < top and y < middle ):
+            bottomFound = True
+            if ( y > bottom):
+                bottom = y                    
+        
+
+    print "debug "+str(top)+' '+str(middle)+' '+str(bottom)
+    # we haven't found bottom
+    if ( bottomFound == False ):        
+        return top
+    
+    return bottom
+    
 if __name__ == '__main__':
     arr = map(int, raw_input().rstrip().split())
 
