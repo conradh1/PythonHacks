@@ -1,6 +1,6 @@
 
 #!/bin/python
-#https://leetcode.com/problems/merge-sorted-array/
+#https://leetcode.com/problems/contains-duplicate-ii/submissions/
 
 import math
 import os
