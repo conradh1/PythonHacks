@@ -21,7 +21,7 @@ def rotatebetter(nums, k):
             t1 = t2
         else:
             nums[len(nums)-(i+k)] = t1
-            i = len(nums)-(i+k)       
+            i += 1   
             t1 = nums[i]     
         c += 1
         

@@ -33,8 +33,7 @@ if __name__ == '__main__':
     a = [1,2,3,1,2,3]
     k = 2  
 
-    print str(containsNearbyDuplicate(a, k))
+    print(str(containsNearbyDuplicate(a, k)))
     a = [1,2,3,1]
     k = 3
-    print str(containsNearbyDuplicate(a, k))
-    
+    print(str(containsNearbyDuplicate(a, k)))

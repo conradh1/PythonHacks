@@ -60,15 +60,15 @@ def capitals():
 
     Countries = ['Russia', 'France', 'USA', 'Russia']
 
-    for country in Countries:
+    for capital in Countries:
       # For each country from the list check to see whether it is in the dictionary Capitals
-        if country in Capitals:
-            print('The capital of ' + country + ' is ' + Capitals[country])
+        if capital in Capitals:
+            print('The capital of ' + capital + ' is ' + Capitals[capital])
         else:
-            print('The capital of ' + country + ' is unknown')
+            print('The capital of ' + capital + ' is unknown')
 
-    print Capitals.items()
-    print Capitals.keys()
+    print(Capitals.items())
+    print(Capitals.keys())
     Capitals.pop('USA')
     if ( 'Washington' not in Capitals.item()):
         print "Where's DC go?"
