@@ -41,6 +41,7 @@ def dino_csv(dino_file_1, dino_file_2):
         
         if (stance == 'bipedal'):
             leg_length = dinos[dino_name]            
+            
             speed = ((stride_length / leg_length) - 1) * math.sqrt(leg_length * 9.8)                         
             speeds[str(speed)] = dino_name
 
